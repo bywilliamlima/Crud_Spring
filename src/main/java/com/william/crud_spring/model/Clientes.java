@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Clientes {  // Mudança do nome da classe para o singular
+public class Clientes { 
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
