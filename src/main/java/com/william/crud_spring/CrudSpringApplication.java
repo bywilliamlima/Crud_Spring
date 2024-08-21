@@ -25,8 +25,8 @@ public class CrudSpringApplication {
 
 			c.setName("William Lima");
 			c.setCategory("Pessoa Fisica");
-			c.setCnpj("124.659.586-52");
-			c.setPhone("3541-7886");
+			c.setCnpj("112.113.114-55");
+			c.setPhone("(81) 3333-7777");
 
 			clienteRepository.save(c);
 
