@@ -27,6 +27,7 @@ public class CrudSpringApplication {
 			c.setCategory("Pessoa Fisica");
 			c.setCnpj("112.113.114-55");
 			c.setPhone("(81) 3333-7777");
+			c.setIe("123456789");
 			
 
 			clienteRepository.save(c);

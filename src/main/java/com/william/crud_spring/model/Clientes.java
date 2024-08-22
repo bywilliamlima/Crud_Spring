@@ -33,6 +33,9 @@ public class Clientes {
     @Column(length = 20, nullable = false)
     private String phone;
 
+    @Column(length = 20, nullable = false)
+    private String ie;
+
     @Column(nullable = false)
     private LocalDateTime dataCadastro;
 
