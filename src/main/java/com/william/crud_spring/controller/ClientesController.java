@@ -17,32 +17,32 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.william.crud_spring.model.Clientes;
 import com.william.crud_spring.repository.ClienteRepository;
+import com.william.crud_spring.service.ClientesService;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
-import lombok.AllArgsConstructor;
 
 @Validated 
 @RestController
 @RequestMapping("/api/clientes")
-@AllArgsConstructor
+
 public class ClientesController {
-
-    
+ 
     private final  ClienteRepository clienteRepository;
+    private final ClientesService clientesService;
 
-   
+    public ClientesController(ClienteRepository clienteRepository, ClientesService clientesService) {
+        this.clienteRepository = clienteRepository;
+        this.clientesService = clientesService;
+    }
     
-
-
     @GetMapping
     public List<Clientes> list(){
-        return clienteRepository.findAll();
+        return clientesService.list();
     }
 
     @GetMapping("/{name}")
-
 
     public ResponseEntity<Clientes> findByClientes(@PathVariable Long name) {
         return clienteRepository.findById(name)
@@ -50,7 +50,6 @@ public class ClientesController {
             .orElse(ResponseEntity.notFound().build());
 
     }
-
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
